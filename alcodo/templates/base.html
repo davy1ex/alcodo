@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head></head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    
+    {% block head %}
+        <title>alcodo</tltitle>
+        {% if title != '' %}
+            <title>alcodo|{{ title }}</title>
+        {% endif %}
+    {% endblock %}
+</head>
+<body>
+    <div class="content row">
+        <div class="header col-md-auto">
+            <header>
+                <div class="row logo">
+                    ALCODO
+                </div>
+                <ul>
+                    {% if user %}
+                        <li><strong>{{ user }}</strong></li>
+                        <li><a href="">Setting</a></li>
+                        <li><a href="{% url 'logout' %}">LogOut</a></li>
+                    {% else %}
+                        <li><a href="">LogIn</a></li>
+                        <li>
+                            <div class="vk-logo">
+                                <a href="{% url "social:begin" "vk-oauth2" %}">
+                                    <img src="{% static 'images/vk-logo.png'%}" alt="">
+                                </a>
+                            </div>
+                        </li>
+                        
+                    {% endif %}                  
+                    <li><a href="/">Собутыльники</a></li>
+                    <li><a href="/">Сообщения</a></li>
+                    <li><a href="/">Пригласили</a></li>
+                    <li><a href="/">Кореша</a></li>
+                    <li><a href="/">Посетили</a></li>
+                    
+                </ul>
+            </header>    
+        </div>
+        <div class="content col">
+            тут текст
+        </div>
+    </div>
+    
+</body>
+</html>

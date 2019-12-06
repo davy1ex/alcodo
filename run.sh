@@ -1,0 +1,1 @@
+source venv/bin/activate && python alcodo/manage.py runserver

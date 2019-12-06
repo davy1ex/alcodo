@@ -1,0 +1,36 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+
+.header {
+    background: #f8f8f8;
+    color: gray;
+    margin-left: 20px;  
+}
+
+.header ul li {
+    list-style: none;
+}
+
+.logo {
+    text-align: center;
+}
+
+.vk-logo img {
+    width: 30px;
+}
+
+.header a, .header a:visited {
+    color: gray;
+    text-decoration: none;
+}
+
+.header a:hover {
+    color: lightgray;
+}
+
+.content {
+    /* background: lightgray; */
+}
