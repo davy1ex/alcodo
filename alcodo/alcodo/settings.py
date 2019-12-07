@@ -123,7 +123,12 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend', # бекенд классической аутентификации, чтобы работала авторизация через обычный логин и пароль
 )
 
+SOCIAL_AUTH_VK_OAUTH2_SCOPE = ['photo']
 SOCIAL_AUTH_VK_OAUTH2_KEY = '7182343'
 SOCIAL_AUTH_VK_OAUTH2_SECRET = 'nmIoUQwbzWACSHOmpyEo'
+SOCIAL_AUTH_VK_OAUTH2_SECRET_PROFILE_EXTRA_PARAMS = {       # add this
+  'fields': 'id, name, photo_200'
+}
 
 LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'

@@ -8,7 +8,8 @@ import profiles.views
 SOCIAL_AUTH_URL_NAMESPACE = 'social'
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url('', include('social_django.urls', namespace='social')),
-    url('logout/', profiles.views.logout_view, name='logout'),
+    # url('', include('social_django.urls', namespace='social')),
+    path('logout/', profiles.views.logout_view, name='logout'),
+    path('social-auth/', include('social_django.urls', namespace="social")),
     path('', profiles.views.mypage),
 ]

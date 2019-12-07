@@ -3,11 +3,20 @@
     margin: 0;
 }
 
+html,body {
+    height: 100%;
+  }
+
 
 .header {
     background: #f8f8f8;
     color: gray;
-    margin-left: 20px;  
+    padding: 0px !important;
+}
+
+header {
+    width: 80%;
+    margin: auto;
 }
 
 .header ul li {
@@ -16,10 +25,34 @@
 
 .logo {
     text-align: center;
+    margin: 5px 0 10px 0;
 }
 
-.vk-logo img {
+.logo hr, .user hr {
+    padding-top: 0;
+    margin: 5px 0 0 0;
+}
+
+
+.user {
+    margin: 5px 0 10px 0;
+    
+}
+
+
+.login_services {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+
+.vk_logo {
+    padding:1px;
+}
+
+.vk_logo img {
     width: 30px;
+    
 }
 
 .header a, .header a:visited {
