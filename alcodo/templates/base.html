@@ -27,32 +27,22 @@
                 <ul>
                     <div class="user" id="user">
                         {% if user %}
-                            {% for ass in backends.associated %}
-                                {{ ass.extra_data }}
-                            {% endfor %}
-                            <img src="https://api.vk.com/method/users.get?user_id={{ user.extra_data.id }}&fields=photo_200&access_token={{ user.extra_data.access_token }}&v=5.103" alt="">
-
-                            <!-- <script>
-                                 $.ajax({
-                                    url: 'api.vk.com/method/users.get?user_id={{ user.extra_data.id }}&fields=photo_200&access_token={{ user.extra_data.access_token }}&v=5.103',
-                                    dataType: 'json',
-                                    // elem.src = data.photo_200
-                                    success: function(data) {
-                                        alert(JSON.stringify(data));
-                                    },
-                                    error: function() {
-                                        alert('error');
-                                    }
-                                });
+                            <div class="user_info row">
+                                <div class="avatar col-4">
+                                    <img src="{% static 'img/anonymous-user.png' %}" alt="">
+                                </div>                            
                                 
-                                // document.getElementById("user").appendChild(elem);
-                                // elem.src = data.photo_200
-
-                            </script> -->
-
-                            <li><strong>{{ user }}</strong></li>
-                            <li><a href="">Setting</a></li>
-                            <li><a href="{% url 'logout' %}">LogOut</a></li>
+                                <div class="text col-8">
+                                    <li><strong>{{ user }}</strong></li>
+                                    <li>Популярность:</li>
+                                    <li><a href="">Настройки</a></li>
+                                    <li><a href="{% url 'logout' %}">Выйти</a></li>
+                                </div>
+                                
+                            </div>
+                            
+                            
+                            
                         {% else %}
                             <!-- <li><a href="">LogIn</a></li> -->
                                 <div class="login_services">
