@@ -29,7 +29,7 @@
                         {% if user %}
                             <div class="user_info row">
                                 <div class="avatar col-4">
-                                    <img src="{% static 'img/anonymous-user.png' %}" alt="">
+                                    <img src="{% static 'images/anonymous-user.png' %}" alt="">
                                 </div>                            
                                 
                                 <div class="text col-8">
@@ -67,7 +67,9 @@
             </header>    
         </div>
         <div class="content col-md-9">
-            тут контент
+            {% for p in profiles %}
+                {{ p.city }}
+            {% endfor %}
         </div>
     </div>
     
